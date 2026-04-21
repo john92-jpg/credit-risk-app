@@ -396,7 +396,7 @@ def generate_final_report_pdf(selected_row: pd.Series, metadata: Dict) -> bytes:
     month = selected_row.get("Month", "N/D")
 
     elements = [
-        Paragraph("Report Finale di Valutazione del Rischio di Credito", styles["Title"]),
+        Paragraph("Report Finale di Valutazione Credit Risk", styles["Title"]),
         Spacer(1, 16),
         Paragraph("1. Profilo aziendale", styles["Heading2"]),
         Paragraph(f"<b>Corporation:</b> {company}", small),
@@ -409,23 +409,17 @@ def generate_final_report_pdf(selected_row: pd.Series, metadata: Dict) -> bytes:
         Paragraph(f"<b>Probabilità classe 1:</b> {prob * 100:.2f}%", small),
         Paragraph(f"<b>Livello di rischio:</b> {level}", small),
         Spacer(1, 12),
-        Paragraph("3. Driver principali", styles["Heading2"]),
-        Paragraph(str(selected_row["driver_principali"]), small),
-        Spacer(1, 10),
-        Paragraph("4. Spiegazione business", styles["Heading2"]),
+
+        Paragraph("4. Spiegazione Valutazione", styles["Heading2"]),
         Paragraph(explanation_text, small),
         Spacer(1, 10),
-        Paragraph("5. Traduzione della regola", styles["Heading2"]),
-        Paragraph(str(selected_row["traduzione_regola"]), small),
-        Spacer(1, 10),
+
         Paragraph("6. Interpretazione del rischio", styles["Heading2"]),
         Paragraph(str(selected_row["interpretazione_rischio_regola"]), small),
         Spacer(1, 10),
         Paragraph("7. Confidenza della regola", styles["Heading2"]),
         Paragraph(str(selected_row.get("confidenza_regola", "N/D")), small),
         PageBreak(),
-        Paragraph("Appendice - Regole simboliche", styles["Heading2"]),
-        Spacer(1, 8),
     ]
 
     appendix_data = [[
