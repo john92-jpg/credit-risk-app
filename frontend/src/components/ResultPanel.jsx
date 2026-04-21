@@ -31,18 +31,18 @@ export default function ResultPanel({ result, onDownloadReport, downloading }) {
         <StatCard label="Confidenza regola" value={row['confidenza_regola'] ?? 'N/D'} />
       </div>
 
-	/*
+{/*
       <div className="card detail-card">
         <h3>Driver principali</h3>
         <p>{row['driver_principali'] || 'N/D'}</p>
       </div>
-	*/
-	/*
+*/}
+{/*
       <div className="card detail-card">
         <h3>Traduzione della regola</h3>
         <p>{row['traduzione_regola'] || 'N/D'}</p>
       </div>
-	*/
+*/}
 
       <div className="card detail-card">
         <h3>Interpretazione del rischio</h3>
