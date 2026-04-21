@@ -130,7 +130,7 @@ export default function App() {
         <section className="card form-panel">
           <h2>Single company analysis</h2>
           <p className="section-description">
-            I campi seguenti campit sono obbligatori: {requiredLabels.join(', ')}
+            I seguenti campi sono obbligatori: {requiredLabels.join(', ')}
           </p>
 
           <form onSubmit={handleSubmit}>
