@@ -4,7 +4,7 @@ import { downloadSingleReport, fetchMetadata, predictSingle } from './services/a
 
 const fieldGroups = [
   {
-    title: 'Required inputs',
+    title: 'Input Obbligatori',
     fields: [
       { label: 'Current Ratio', type: 'number', required: true },
       { label: 'Debt/Equity Ratio', type: 'number', required: true },
@@ -16,7 +16,7 @@ const fieldGroups = [
     ],
   },
   {
-    title: 'Optional business context',
+    title: 'Input Facoltativi',
     fields: [
       { label: 'Corporation', type: 'text' },
       { label: 'Sector', type: 'text' },
@@ -128,11 +128,10 @@ export default function App() {
 
       <main className="main-grid">
         <section className="card form-panel">
-          <h2>Single company analysis</h2>
+          <h2>Company analysis</h2>
           <p className="section-description">
             I seguenti campi sono obbligatori: {requiredLabels.join(', ')}
           </p>
-
           <form onSubmit={handleSubmit}>
             {fieldGroups.map((group) => (
               <div key={group.title} className="form-group-block">
