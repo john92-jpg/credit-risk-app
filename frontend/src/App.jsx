@@ -116,8 +116,7 @@ export default function App() {
     <div className="page-shell">
       <header className="hero">
         <div>
-          <div className="eyebrow">Neurosymbolic Credit Risk</div>
-          <h1>Credit Risk Analysis App</h1>
+          <h1>Credit Risk Analysis</h1>
           <p>
             Inserisci gli indicatori finanziari, ottieni la classe di rischio stimata, i driver principali
             e genera un report PDF pronto da presentare.
@@ -131,7 +130,7 @@ export default function App() {
         <section className="card form-panel">
           <h2>Single company analysis</h2>
           <p className="section-description">
-            I campi obbligatori derivano dal tuo metadata di training. Obbligatori: {requiredLabels.join(', ')}
+            I campi seguenti campit sono obbligatori: {requiredLabels.join(', ')}
           </p>
 
           <form onSubmit={handleSubmit}>
